@@ -1,0 +1,38 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div class="row">
+  <div class="text-center">
+    <h1>Shopping List</h1>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-3 col-md-offset-1">
+    <input type="form-contol" name=""  placeholder="Название" [(ngModel)]="name">
+  </div>
+  <div class="col-md-3">
+    <input type="form-contol" name=""  placeholder="Цена" [(ngModel)]="price">
+  </div>
+  <div class="col-md-2">
+    <button type="button" class="btn btn-success" (click)="addItem(name, price)">Добавить</button>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Предмет</th>
+          <th>Цена</th>
+          <th>Куплено</th>
+        </tr>
+      </thead>
+      <tbody >
+        <tr *ngFor="let item of items">
+          <td>{{item.name}}</td>
+          <td>{{item.price}}</td>
+          <td><input type="checkbox" name="" value="" [(ngModel)]="item.done"></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
